@@ -5,7 +5,7 @@ var xhrRequests = (function() {
 
   function createRequest(requestType, endPoint, dataToSend, cb)  {
     var xhr = new XMLHttpRequest();
-    xhr.open(requestType, host + endPoint);
+    xhr.open(requestType, endPoint);
     xhr.setRequestHeader('content-type', 'application/json; charset=utf-8');
     xhr.onload = function () {
       if (cb !== undefined) {
