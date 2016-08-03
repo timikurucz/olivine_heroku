@@ -20,6 +20,7 @@ domOperations.delButton.addEventListener('click', function(event){
 });
 
 domOperations.filterButton.addEventListener('click', function(event){
+  event.preventDefault();
   funcsForRequires.getAllFilteredMeals();
 });
 
@@ -44,7 +45,7 @@ domOperations.showAllButton.addEventListener('click', function(event){
 //   }
 // });
 
-// 
+//
 // function delMeal(id) {
 //   var endPoint = '/meals/'+ id;
 //   xhrRequests.createRequest('DELETE', endPoint, null, domOperations.delOneMeal);

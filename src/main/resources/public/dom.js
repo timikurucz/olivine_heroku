@@ -108,11 +108,9 @@ var domOperations = (function(){
   }
 
   function showFilteredMeals(response) {
-    console.log(response[0]);
-    console.log(response.length);
     content.innerHTML = '';
     // filterInputField.value = '';
-    response.forEach(function(e){
+    response.meals.forEach(function(e){
       createOneNewMeal(e);
     });
   }

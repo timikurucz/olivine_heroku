@@ -18,7 +18,7 @@ public class caloriesJDBCTemplate {
         DataBase allMeals = new DataBase();
         String SQL = "select * from meals";
         List<Meal> meals = jdbcTemplateObject.query(SQL,
-            new MealMapper());
+                new MealMapper());
         for (Meal meal : meals) {
             allMeals.addMeal(meal);
         }
@@ -28,7 +28,7 @@ public class caloriesJDBCTemplate {
     public Meal getMeal(Integer id) {
         String SQL = "select * from meals where id = ?";
         Meal meal = jdbcTemplateObject.queryForObject(SQL,
-            new Object[]{id}, new MealMapper());
+                new Object[]{id}, new MealMapper());
         return meal;
     }
 
@@ -48,21 +48,21 @@ public class caloriesJDBCTemplate {
     }
 
     public void deleteMeals(ItemIds ids) {
-            StringBuilder idsStringified = new StringBuilder();
-            for (Integer id : ids.item_ids) {
-                if (idsStringified.length() == 0){
-                    idsStringified.append(id);
-                } else {
-                    idsStringified.append(", ");
-                    idsStringified.append(id);
-                }
+        StringBuilder idsStringified = new StringBuilder();
+        for (Integer id : ids.item_ids) {
+            if (idsStringified.length() == 0){
+                idsStringified.append(id);
+            } else {
+                idsStringified.append(", ");
+                idsStringified.append(id);
             }
-            String SQL = "delete from meals where id IN (" + idsStringified.toString() + ")";
-            System.out.println(idsStringified.toString());
-            System.out.println(SQL);
-            jdbcTemplateObject.update(SQL);
         }
+        String SQL = "delete from meals where id IN (" + idsStringified.toString() + ")";
+        System.out.println(idsStringified.toString());
+        System.out.println(SQL);
+        jdbcTemplateObject.update(SQL);
     }
+}
 
 
 

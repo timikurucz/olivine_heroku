@@ -1,7 +1,7 @@
 'use strict';
 
 var xhrRequests = (function() {
-  var host = 'https://calorie-app-java.herokuapp.com';
+  var host = 'http://localhost:8080';
 
   function createRequest(requestType, endPoint, dataToSend, cb)  {
     var xhr = new XMLHttpRequest();
