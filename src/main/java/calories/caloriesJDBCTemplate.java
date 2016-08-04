@@ -42,9 +42,9 @@ public class caloriesJDBCTemplate {
         return allMeals;
     }
 
-    public void addMeal(String name, Integer calories, String date) {
-        String SQL = "insert into meals (name, calories, date) values (?, ?, ?)";
-        jdbcTemplateObject.update(SQL, name, calories, date);
+    public void addMeal(int id, String name, Integer calories, String date) {
+        String SQL = "insert into meals (id, name, calories, date) values (?, ?, ?, ?)";
+        jdbcTemplateObject.update(SQL, id, name, calories, date);
     }
 
     public void deleteMeals(ItemIds ids) {

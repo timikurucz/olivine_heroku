@@ -1,13 +1,15 @@
 package calories;
 
+import java.sql.PreparedStatement;
+
 public class Meal {
     public int id;
     public String name;
     public int calories;
     public String date;
 
-    public Meal(int id, String name, int calories, String date) {
-        this.id = id;
+    public Meal(String name, int calories, String date) {
+//        this.id = id;
         this.name = name;
         this.calories = calories;
         this.date = date;
@@ -22,6 +24,6 @@ public class Meal {
 
     @Override
     public String toString() {
-        return "id = " + this.id + ", name = " + this.name + ", calories = " + calories + " Date: " + date;
+        return "id = " + PreparedStatement.RETURN_GENERATED_KEYS + ", name = " + this.name + ", calories = " + calories + " Date: " + date;
     }
 }

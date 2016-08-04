@@ -41,7 +41,7 @@ public class MealsController {
     public Meal addMeal(@RequestBody Meal addedMeal) {
         caloriesJDBCTemplate newTemplate = new caloriesJDBCTemplate();
         newTemplate.setDataSource(getDatasource());
-        newTemplate.addMeal(addedMeal.name, addedMeal.calories, addedMeal.date);
+        newTemplate.addMeal(addedMeal.id, addedMeal.name, addedMeal.calories, addedMeal.date);
         return addedMeal;
     }
 
