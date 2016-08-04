@@ -10,9 +10,9 @@ public class MealsController {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 //        String energy = System.getenv().get("Passw");
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-//        dataSource.setPassword(energy);
-        dataSource.setUrl("jdbc:mysql://b540da1bff825c:4cf3a5c3@eu-cdbr-west-01.cleardb.com/heroku_8414b8f4e2fbcbe?reconnect=true");
-//        dataSource.setUsername("root");
+        dataSource.setPassword("4cf3a5c3");
+        dataSource.setUrl("jdbc:mysql://eu-cdbr-west-01.cleardb.com/heroku_8414b8f4e2fbcbe?reconnect=true");
+        dataSource.setUsername("b540da1bff825c");
         return dataSource;
     }
 
